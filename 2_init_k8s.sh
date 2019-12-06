@@ -30,6 +30,15 @@ docker tag 59.61.92.150:8888/pause-amd64:3.1 k8s.gcr.io/pause-amd64:3.1
 docker tag 59.61.92.150:8888/kubernetes-dashboard-amd64:v1.10.0 k8s.gcr.io/kubernetes-dashboard-amd64:v1.10.0
 echo "============下载k8s docker镜像done"
 
+docker pull 59.61.92.150:8888/calico/kube-controllers:v3.1.4 
+docker pull 59.61.92.150:8888/calico/cni:v3.1.4
+docker pull 59.61.92.150:8888/calico/node:v3.1.4
+
+docker tag 59.61.92.150:8888/calico/kube-controllers:v3.1.4 quay.io/calico/kube-controllers:v3.1.4
+docker tag 59.61.92.150:8888/calico/cni:v3.1.4 quay.io/calico/cni:v3.1.4
+docker tag 59.61.92.150:8888/calico/node:v3.1.4 quay.io/calico/node:v3.1.4
+echo "============下载calico docker镜像done"
+
 # 安装k8s
 yum install -y kubernetes-cni-0.6.0 kubelet-1.10.11 kubeadm-1.10.11 kubectl-1.10.11
 echo "============yum安装k8s done"
@@ -41,18 +50,10 @@ echo 'Environment="KUBELET_EXTRA_ARGS=--fail-swap-on=false"' >> /etc/systemd/sys
 systemctl enable kubelet && systemctl start kubelet
 echo "============配置并启动k8s done"
 
-# 初始化k8s
-kubeadm init --kubernetes-version=v1.10.11 --pod-network-cidr=10.244.0.0/16 --service-cidr=10.96.0.0/16 --apiserver-advertise-address=172.168.50.105 --ignore-preflight-errors=all
-echo "============初始化k8s done"
+#配置kubectl命令自动补全
+yum install -y bash-completion
+source /usr/share/bash-completion/bash_completion
+source <(kubectl completion bash)
 
-# 启动之后有提示需要执行以下脚本
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
-
-# 生产一个永久token
-kubeadm token create --ttl 0
-# 查看所有token
-kubeadm token list
 
 echo "============完成安装k8s============"

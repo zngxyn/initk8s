@@ -4,16 +4,19 @@ local_ip=172.168.50.105
 
 echo "============开始初始化master============"
 
-docker login -u gnwpubdev -p pubdev888 59.61.92.150:8888
+# 初始化k8s
+kubeadm init --kubernetes-version=v1.10.11 --pod-network-cidr=10.244.0.0/16 --service-cidr=10.96.0.0/16 --apiserver-advertise-address=$local_ip --ignore-preflight-errors=all
+echo "============初始化k8s done"
 
-docker pull 59.61.92.150:8888/calico/kube-controllers:v3.1.4 
-docker pull 59.61.92.150:8888/calico/cni:v3.1.4
-docker pull 59.61.92.150:8888/calico/node:v3.1.4
+# 启动之后有提示需要执行以下脚本
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-docker tag 59.61.92.150:8888/calico/kube-controllers:v3.1.4 quay.io/calico/kube-controllers:v3.1.4
-docker tag 59.61.92.150:8888/calico/cni:v3.1.4 quay.io/calico/cni:v3.1.4
-docker tag 59.61.92.150:8888/calico/node:v3.1.4 quay.io/calico/node:v3.1.4
-echo "============下载calico docker镜像done"
+# 生产一个永久token
+kubeadm token create --ttl 0
+# 查看所有token
+kubeadm token list
 
 kubectl apply -f calico/rbac.yaml
 kubectl apply -f calico/calico.yaml
@@ -21,6 +24,8 @@ echo "============设置calico done"
 
 kubectl create -f dns/kube-dns.yaml
 echo "============设置dns done"
+
+docker login -u gnwpubdev -p pubdev888 59.61.92.150:8888
 
 docker pull 59.61.92.150:8888/heapster-influxdb-amd64:v1.3.3
 docker pull 59.61.92.150:8888/heapster-grafana-amd64:v4.4.3
@@ -43,9 +48,5 @@ echo "dashboard管理后台地址：""https://"$local_ip":"$(kubectl get svc -n 
 echo "dashboard管理后台登录token：" && kubectl describe secret | grep token:
 kubectl create clusterrolebinding --user system:serviceaccount:default:default default-sa-admin --clusterrole cluster-admin	
 echo "============设置doshboard done"
-
-#配置kubectl命令自动补全
-source /usr/share/bash-completion/bash_completion
-source <(kubectl completion bash)
 
 echo "============完成初始化master============"
