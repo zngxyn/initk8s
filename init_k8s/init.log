@@ -1,0 +1,180 @@
+net.ipv4.ip_forward = 1
+已加载插件：fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.aliyun.com
+ * extras: mirrors.aliyun.com
+ * updates: mirrors.cn99.com
+软件包 yum-utils-1.1.31-50.el7.noarch 已安装并且是最新版本
+软件包 device-mapper-persistent-data-0.7.3-3.el7.x86_64 已安装并且是最新版本
+软件包 7:lvm2-2.02.180-10.el7_6.7.x86_64 已安装并且是最新版本
+软件包 1:bash-completion-2.1-6.el7.noarch 已安装并且是最新版本
+无须任何处理
+已加载插件：fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.aliyun.com
+ * extras: mirrors.aliyun.com
+ * updates: mirrors.cn99.com
+元数据缓存已建立
+已加载插件：fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.aliyun.com
+ * extras: mirrors.aliyun.com
+ * updates: mirrors.cn99.com
+软件包 docker-ce-17.12.1.ce-1.el7.centos.x86_64 已安装并且是最新版本
+无须任何处理
+Login Succeeded
+v1.10.11: Pulling from kube-apiserver-amd64
+Digest: sha256:2a413ec785f38b4e2cc17a4f82aa570afef333232529dd0fc3957f59457854df
+Status: Image is up to date for 59.61.92.150:8888/kube-apiserver-amd64:v1.10.11
+v1.10.11: Pulling from kube-scheduler-amd64
+Digest: sha256:c7ec11fe1b13aeb34f5ec0a8e7d037a44f60be49b45210d39fe052ec95993dde
+Status: Image is up to date for 59.61.92.150:8888/kube-scheduler-amd64:v1.10.11
+v1.10.11: Pulling from kube-controller-manager-amd64
+Digest: sha256:b94eda0562320317c7b842356bcf09e7a4b10eb5080b5a409e597fca6a72e066
+Status: Image is up to date for 59.61.92.150:8888/kube-controller-manager-amd64:v1.10.11
+v1.10.11: Pulling from kube-proxy-amd64
+Digest: sha256:ca952a67aae21be9d11d0f3a5e328092ebb15a472291d54c875c22402556abc0
+Status: Image is up to date for 59.61.92.150:8888/kube-proxy-amd64:v1.10.11
+1.14.8: Pulling from k8s-dns-kube-dns-amd64
+Digest: sha256:30a881d597e3f234e5f4264b7bf45ca3c7eb120a789c911f2c5ad9f86263322c
+Status: Image is up to date for 59.61.92.150:8888/k8s-dns-kube-dns-amd64:1.14.8
+1.14.8: Pulling from k8s-dns-dnsmasq-nanny-amd64
+Digest: sha256:195d7a05078d84c9b796d0db268e8ef45401ac0ed8aa7c275dd0613d301d5ac0
+Status: Image is up to date for 59.61.92.150:8888/k8s-dns-dnsmasq-nanny-amd64:1.14.8
+1.14.8: Pulling from k8s-dns-sidecar-amd64
+Digest: sha256:8b88b6489862d7fce6ec004b865ec4019e94e688ed7b4be50d7f2191587a4547
+Status: Image is up to date for 59.61.92.150:8888/k8s-dns-sidecar-amd64:1.14.8
+3.1.12: Pulling from etcd-amd64
+Digest: sha256:a873afd0244c0029295899e3ab7ab7f474d097c42679a6d80c37f4017bc65598
+Status: Image is up to date for 59.61.92.150:8888/etcd-amd64:3.1.12
+v0.10.0-amd64: Pulling from coreos/flannel
+Digest: sha256:d735f83e153b3c5464e4a14d38275d01863674dd73a387d1f9afe60f40732128
+Status: Image is up to date for 59.61.92.150:8888/coreos/flannel:v0.10.0-amd64
+3.1: Pulling from pause-amd64
+Digest: sha256:759c3f0f6493093a9043cc813092290af69029699ade0e3dbe024e968fcb7cca
+Status: Image is up to date for 59.61.92.150:8888/pause-amd64:3.1
+v1.10.0: Pulling from kubernetes-dashboard-amd64
+Digest: sha256:f9fc2b4198702fe1237dfb89c6594f1a707fa97be79d78332e610e9579f58331
+Status: Image is up to date for 59.61.92.150:8888/kubernetes-dashboard-amd64:v1.10.0
+已加载插件：fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.aliyun.com
+ * extras: mirrors.aliyun.com
+ * updates: mirrors.cn99.com
+软件包 kubernetes-cni-0.6.0-0.x86_64 已安装并且是最新版本
+软件包 kubelet-1.10.11-0.x86_64 已安装并且是最新版本
+软件包 kubeadm-1.10.11-0.x86_64 已安装并且是最新版本
+软件包 kubectl-1.10.11-0.x86_64 已安装并且是最新版本
+无须任何处理
+[init] Using Kubernetes version: v1.10.11
+[init] Using Authorization modes: [Node RBAC]
+[preflight] Running pre-flight checks.
+[certificates] Generated ca certificate and key.
+[certificates] Generated apiserver certificate and key.
+[certificates] apiserver serving cert is signed for DNS names [master59 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 172.168.50.59]
+[certificates] Generated apiserver-kubelet-client certificate and key.
+[certificates] Generated sa key and public key.
+[certificates] Generated front-proxy-ca certificate and key.
+[certificates] Generated front-proxy-client certificate and key.
+[certificates] Generated etcd/ca certificate and key.
+[certificates] Generated etcd/server certificate and key.
+[certificates] etcd/server serving cert is signed for DNS names [localhost] and IPs [127.0.0.1]
+[certificates] Generated etcd/peer certificate and key.
+[certificates] etcd/peer serving cert is signed for DNS names [master59] and IPs [172.168.50.59]
+[certificates] Generated etcd/healthcheck-client certificate and key.
+[certificates] Generated apiserver-etcd-client certificate and key.
+[certificates] Valid certificates and keys now exist in "/etc/kubernetes/pki"
+[kubeconfig] Wrote KubeConfig file to disk: "/etc/kubernetes/admin.conf"
+[kubeconfig] Wrote KubeConfig file to disk: "/etc/kubernetes/kubelet.conf"
+[kubeconfig] Wrote KubeConfig file to disk: "/etc/kubernetes/controller-manager.conf"
+[kubeconfig] Wrote KubeConfig file to disk: "/etc/kubernetes/scheduler.conf"
+[controlplane] Wrote Static Pod manifest for component kube-apiserver to "/etc/kubernetes/manifests/kube-apiserver.yaml"
+[controlplane] Wrote Static Pod manifest for component kube-controller-manager to "/etc/kubernetes/manifests/kube-controller-manager.yaml"
+[controlplane] Wrote Static Pod manifest for component kube-scheduler to "/etc/kubernetes/manifests/kube-scheduler.yaml"
+[etcd] Wrote Static Pod manifest for a local etcd instance to "/etc/kubernetes/manifests/etcd.yaml"
+[init] Waiting for the kubelet to boot up the control plane as Static Pods from directory "/etc/kubernetes/manifests".
+[init] This might take a minute or longer if the control plane images have to be pulled.
+[apiclient] All control plane components are healthy after 18.501441 seconds
+[uploadconfig] Storing the configuration used in ConfigMap "kubeadm-config" in the "kube-system" Namespace
+[markmaster] Will mark node master59 as master by adding a label and a taint
+[markmaster] Master master59 tainted and labelled with key/value: node-role.kubernetes.io/master=""
+[bootstraptoken] Using token: fx0zfu.pie2iueni6tr68yk
+[bootstraptoken] Configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstraptoken] Configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstraptoken] Configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstraptoken] Creating the "cluster-info" ConfigMap in the "kube-public" namespace
+[addons] Applied essential addon: kube-dns
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes master has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+You can now join any number of machines by running the following on each node
+as root:
+
+  kubeadm join 172.168.50.59:6443 --token fx0zfu.pie2iueni6tr68yk --discovery-token-ca-cert-hash sha256:3d8247efe2bf3af948861c062b660ef79a817cb026c8b78e82621641e89bff1c
+
+join command do not forget add this: --ignore-preflight-errors=all
+join cluster kubeadm token(ttl 0):
+17andr.r4ns2wli5e6fvfjr
+v3.1.4: Pulling from calico/kube-controllers
+Digest: sha256:9ee43ec355d1a35230a25b7da088e2fd422b6232f947f1f2a52d88e4dfb1ca91
+Status: Image is up to date for 59.61.92.150:8888/calico/kube-controllers:v3.1.4
+v3.1.4: Pulling from calico/cni
+Digest: sha256:f946f1a8c9314359723465ff56d381db9dd69f6201d12a66f2a8717e80d9f940
+Status: Image is up to date for 59.61.92.150:8888/calico/cni:v3.1.4
+v3.1.4: Pulling from calico/node
+Digest: sha256:354d0412a376987c48de06435629d17445b5a5c731d689482feb9cc5d69dc20b
+Status: Image is up to date for 59.61.92.150:8888/calico/node:v3.1.4
+clusterrole.rbac.authorization.k8s.io "calico-kube-controllers" created
+clusterrolebinding.rbac.authorization.k8s.io "calico-kube-controllers" created
+clusterrole.rbac.authorization.k8s.io "calico-node" created
+clusterrolebinding.rbac.authorization.k8s.io "calico-node" created
+configmap "calico-config" created
+daemonset.extensions "calico-etcd" created
+service "calico-etcd" created
+secret "calico-etcd-secrets" created
+daemonset.extensions "calico-node" created
+deployment.extensions "calico-kube-controllers" created
+serviceaccount "calico-kube-controllers" created
+serviceaccount "calico-node" created
+configmap "kube-dns" created
+v1.3.3: Pulling from heapster-influxdb-amd64
+Digest: sha256:0f43101b50a7150ccdee6236531461bed0e3c5398489bc92ee99399b3cb00341
+Status: Image is up to date for 59.61.92.150:8888/heapster-influxdb-amd64:v1.3.3
+v4.4.3: Pulling from heapster-grafana-amd64
+Digest: sha256:d663759b3de86cf62e64a43b021f133c383e8f7b0dc2bdd78115bc95db371c9a
+Status: Image is up to date for 59.61.92.150:8888/heapster-grafana-amd64:v4.4.3
+v1.4.2: Pulling from heapster-amd64
+Digest: sha256:bc069b947335d10dc6975a721fbb34dcde06b5b29c2a63e2fec4ab7f325de68c
+Status: Image is up to date for 59.61.92.150:8888/heapster-amd64:v1.4.2
+deployment.extensions "monitoring-grafana" created
+service "monitoring-grafana" created
+clusterrolebinding.rbac.authorization.k8s.io "heapster" created
+serviceaccount "heapster" created
+deployment.extensions "heapster" created
+service "heapster" created
+deployment.extensions "monitoring-influxdb" created
+service "monitoring-influxdb" created
+secret "kubernetes-dashboard-certs" created
+serviceaccount "kubernetes-dashboard" created
+role.rbac.authorization.k8s.io "kubernetes-dashboard-minimal" created
+rolebinding.rbac.authorization.k8s.io "kubernetes-dashboard-minimal" created
+deployment.apps "kubernetes-dashboard" created
+service "kubernetes-dashboard" created
+serviceaccount "kubernetes-dashboard-admin" created
+clusterrolebinding.rbac.authorization.k8s.io "kubernetes-dashboard-admin" created
+clusterrolebinding.rbac.authorization.k8s.io "kubernetes-dashboard-head" created
+service "kubernetes-dashboard" patched
+dashboard管理后台地址：https://172.168.50.59:30472
+dashboard管理后台登录token：
+clusterrolebinding.rbac.authorization.k8s.io "default-sa-admin" created

@@ -5,6 +5,11 @@ register_addr="59.61.92.150:8888"
 
 echo "============配置基本环境开始============"
 
+yum -y install ntp ntpdate
+ntpdate cn.pool.ntp.org
+hwclock --systohc
+echo "============同步时间done"
+
 # 安装常用工具包
 yum install -y yum-utils device-mapper-persistent-data lvm2 vim
 yum makecache fast
